@@ -4,3 +4,11 @@
     align-items:center;
     flex-direction: column;
 }
+
+.divcont{
+    padding-top: 2%;
+}
+
+.divcol{
+    display: flex;
+}
