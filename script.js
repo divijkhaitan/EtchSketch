@@ -1,6 +1,6 @@
 const size=640
 let boxno=16
-const divcontainer=document.querySelector(".divcont")    
+const divcontainer=document.querySelector(".divcont")
 draw(boxno);
 
 let eraser=false;
@@ -27,7 +27,7 @@ ebtn.addEventListener('click',erase)
 const rbtn=document.querySelector('.rgb')
 rbtn.addEventListener('click',clicked)
 const cbtn=document.querySelector('.clear')
-cbtn.addEventListener('click',draw(boxno))
+cbtn.addEventListener('click',clear)
 function clicked()
 {
     const inp=document.querySelector('input');
@@ -41,6 +41,7 @@ function clicked()
 }
 function draw(boxnumber)
 {
+    console.log(boxnumber)
     const divrows=document.createElement('div');
     divrows.classList.add('divrow')
     
@@ -66,7 +67,6 @@ function draw(boxnumber)
 }
 function colour(e)
 {
-    //console.log(drawing)
     if(drawing)
     {
         if(eraser)
@@ -101,4 +101,8 @@ function erase(e)
         eraser=true
         e.target.textContent='Draw'
     }
+}
+function clear()
+{
+    draw(boxno);
 }
