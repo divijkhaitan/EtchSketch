@@ -4,7 +4,7 @@ const divcontainer=document.querySelector(".divcont")
 draw(boxno);
 
 let eraser=false;
-const rgb=false;
+let rgb=false;
 
 let drawing= false;
 document.addEventListener('mousedown',pressed)
@@ -25,7 +25,7 @@ btn.addEventListener('click',clicked)
 const ebtn=document.querySelector('.eraser')
 ebtn.addEventListener('click',erase)
 const rbtn=document.querySelector('.rgb')
-rbtn.addEventListener('click',clicked)
+rbtn.addEventListener('click',multicolour)
 const cbtn=document.querySelector('.clear')
 cbtn.addEventListener('click',clear)
 function clicked()
@@ -77,10 +77,8 @@ function colour(e)
         {
             if(rgb)
             {
-                let randcol= Math.floor(Math.random()*16777215).toString(16);
-                console.log(e.target.style.backgroundColor)
-                e.target.style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
-                console.log(e.target.style.backgroundColor)
+                if(e.target.style.backgroundColor=='')
+                e.target.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
             }
             else
             {
@@ -105,4 +103,17 @@ function erase(e)
 function clear()
 {
     draw(boxno);
+}
+function multicolour(e)
+{
+    if(rgb)
+    {
+        rgb=false
+        e.target.textContent='RGB'
+    }
+    else
+    {
+        rgb=true
+        e.target.textContent='Black'
+    }
 }
