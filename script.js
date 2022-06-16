@@ -78,9 +78,9 @@ function colour(e)
             if(rgb)
             {
                 let randcol= Math.floor(Math.random()*16777215).toString(16);
-                console.log(randcol)
-                e.target.style.backgroundColor=Math.floor(Math.random()*16777215).toString(16);
-                console.log(e.target)
+                console.log(e.target.style.backgroundColor)
+                e.target.style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
+                console.log(e.target.style.backgroundColor)
             }
             else
             {
