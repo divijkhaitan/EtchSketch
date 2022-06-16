@@ -12,8 +12,8 @@ for(let i=0;i<16;i++)
     {
         const div1=document.createElement('div'); 
         div1.style.border= "2px solid black"
-        div1.style.width="20px"
-        div1.style.height="20px"
+        div1.style.width="40px"
+        div1.style.height="40px"
         divcols.appendChild(div1);
     }
     divrows.appendChild(divcols)
