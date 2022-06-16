@@ -3,6 +3,14 @@ const divcontainer=document.querySelector(".divcont")
 draw(16);
 const btn=document.querySelector('.btn')
 btn.addEventListener('click',clicked)
+function clicked()
+{
+    const inp=document.querySelector('input');
+    const squares=inp.value;
+    if(squares<1)
+    return
+    draw(squares);
+}
 function draw(boxnumber)
 {
     const divrows=document.createElement('div');
@@ -18,7 +26,7 @@ function draw(boxnumber)
         for(let i=0;i<boxnumber;i++)
         {
             const div1=document.createElement('div'); 
-            div1.style.border= "2px solid black"
+            div1.style.border= "1px solid black"
             div1.style.width=`${size/boxnumber}px`
             div1.style.height=`${size/boxnumber}px`
             divcols.appendChild(div1);
@@ -26,9 +34,4 @@ function draw(boxnumber)
         divrows.appendChild(divcols)
     }
     divcontainer.appendChild(divrows);
-}
-
-function clicked()
-{
-    const form=document.querySelector('form')
 }
