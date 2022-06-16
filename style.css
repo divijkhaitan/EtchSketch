@@ -6,9 +6,16 @@
 }
 
 .divcont{
-    padding-top: 2%;
+    padding-top: 0.5%;
 }
 
 .divcol{
     display: flex;
+}
+
+.widget{
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+    gap: 120%;
 }

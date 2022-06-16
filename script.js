@@ -1,6 +1,7 @@
 const size=640
+let boxno=16
 const divcontainer=document.querySelector(".divcont")    
-draw(16);
+draw(boxno);
 
 let eraser=false;
 const rgb=false;
@@ -21,13 +22,22 @@ function left()
 
 const btn=document.querySelector('.btn')
 btn.addEventListener('click',clicked)
+const ebtn=document.querySelector('.eraser')
+ebtn.addEventListener('click',erase)
+const rbtn=document.querySelector('.rgb')
+rbtn.addEventListener('click',clicked)
+const cbtn=document.querySelector('.clear')
+cbtn.addEventListener('click',draw(boxno))
 function clicked()
 {
     const inp=document.querySelector('input');
-    const squares=inp.value;
-    if(squares<1)
-    return
-    draw(squares);
+    boxno=inp.value;
+    if(boxno<1||boxno>100)
+    {
+        alert("Number must be between 1 and 100");
+        return
+    }
+    draw(boxno);
 }
 function draw(boxnumber)
 {
@@ -79,10 +89,16 @@ function colour(e)
         }
     }
 }
-function erase()
+function erase(e)
 {
     if(eraser)
-    eraser=false
+    {
+        eraser=false
+        e.target.textContent='Erase'
+    }
     else
-    eraser=true
+    {
+        eraser=true
+        e.target.textContent='Draw'
+    }
 }
